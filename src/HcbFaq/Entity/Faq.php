@@ -2,6 +2,7 @@
 namespace HcbFaq\Entity;
 
 use HcCore\Entity\EntityInterface;
+use HcBackend\Entity\LocalizedInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="faq")
  * @ORM\Entity
  */
-class Faq implements EntityInterface
+class Faq implements EntityInterface, LocalizedInterface
 {
     /**
      * @var integer
