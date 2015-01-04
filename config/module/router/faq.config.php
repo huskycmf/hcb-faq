@@ -2,7 +2,7 @@
 return array(
     'type' => 'literal',
     'options' => array(
-        'route' => '/category'
+        'route' => '/faq'
     ),
     'may_terminate' => false,
     'child_routes' => array(
@@ -10,9 +10,13 @@ return array(
             'type' => 'segment',
             'options' => array(
                 'route' => '/:id',
-                'constraints' => array( 'id' => '[0-9]+' )
+                'constraints' => array( 'id' => '[0-9]+' ),
+                'defaults' => array(
+                    'controller' =>
+                        'HcbFaq-Controller-View'
+                )
             ),
-            'may_terminate' => false,
+            'may_terminate' => true,
             'child_routes' => array(
                 'locale' => array(
                     'type' => 'literal',
@@ -26,7 +30,8 @@ return array(
                             'options' => array(
                                 'verb' => 'get',
                                 'defaults' => array(
-                                    'controller' => 'HcbFaq-Controller-Localized-Collection-List'
+                                    'controller' =>
+                                        'HcbFaq-Controller-Localized-Collection-List'
                                 )
                             )
                         ),

@@ -1,0 +1,22 @@
+<form data-dojo-attach-point="containerNode">
+    <div class="row">
+        <label>${!_t.questionLabel}</label>
+        <input class="${baseClass}Question"
+               data-dojo-type="dijit/form/ValidationTextBox"
+               data-dojo-props='name:"question", required: "true"' />
+    </div>
+
+    <div class="row">
+        <label>${!_t.answerLabel}</label>
+        <input class="${baseClass}Answer"
+               data-dojo-type="dijit/form/ValidationTextBox"
+               data-dojo-props='name:"answer", required: "true"' />
+    </div>
+
+    <input class="${baseClass}AddButton"
+           data-dojo-type="dojo-common/form/BusyButton"
+           data-dojo-attach-point="saveButtonWidget"
+           data-dojo-attach-event="onClick: save"
+           data-dojo-props='name:"send",
+                            label:"${!_t.addButton}"' />
+</form>
